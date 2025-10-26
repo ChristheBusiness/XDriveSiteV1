@@ -5,13 +5,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
-import type { InsertContactMessage } from "@shared/schema";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from "lucide-react";
 
 export default function Contact() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,30 +17,31 @@ export default function Contact() {
     message: ""
   });
 
-  const submitContactMutation = useMutation({
-    mutationFn: async (data: InsertContactMessage) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return await response.json();
-    },
-    onSuccess: () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      const form = e.currentTarget;
+      await fetch("/", {
+        method: "POST",
+        body: new FormData(form),
+      });
+      
       toast({
         title: "Mesaj trimis cu succes!",
         description: "Vă vom contacta în cel mai scurt timp posibil.",
       });
       setFormData({ name: "", email: "", phone: "", message: "" });
-    },
-    onError: () => {
+    } catch (error) {
       toast({
         title: "Eroare",
         description: "A apărut o problemă. Vă rugăm încercați din nou.",
         variant: "destructive",
       });
-    },
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    submitContactMutation.mutate(formData);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -88,13 +87,22 @@ export default function Contact() {
               <h3 className="text-2xl font-semibold text-foreground mb-6">
                 Trimite-ne un Mesaj
               </h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form 
+                name="contact" 
+                method="POST" 
+                data-netlify="true"
+                className="space-y-6"
+                onSubmit={handleSubmit}
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                
                 <div>
                   <Label htmlFor="name" className="mb-2 block">
                     Nume complet *
                   </Label>
                   <Input
                     id="name"
+                    name="name"
                     type="text"
                     placeholder="Ion Popescu"
                     value={formData.name}
@@ -111,6 +119,7 @@ export default function Contact() {
                     </Label>
                     <Input
                       id="email"
+                      name="email"
                       type="email"
                       placeholder="ion.popescu@email.com"
                       value={formData.email}
@@ -126,6 +135,7 @@ export default function Contact() {
                     </Label>
                     <Input
                       id="phone"
+                      name="phone"
                       type="tel"
                       placeholder="+40 722 123 456"
                       value={formData.phone}
@@ -142,6 +152,7 @@ export default function Contact() {
                   </Label>
                   <Textarea
                     id="message"
+                    name="message"
                     placeholder="Descrie-ne cum te putem ajuta..."
                     rows={5}
                     value={formData.message}
@@ -155,10 +166,10 @@ export default function Contact() {
                   type="submit" 
                   variant="default" 
                   className="w-full"
-                  disabled={submitContactMutation.isPending}
+                  disabled={isSubmitting}
                   data-testid="button-submit-contact"
                 >
-                  {submitContactMutation.isPending ? "Se trimite..." : "Trimite Mesajul"}
+                  {isSubmitting ? "Se trimite..." : "Trimite Mesajul"}
                 </Button>
               </form>
             </Card>
