@@ -1,0 +1,10 @@
+[build]
+  # Base directory relative to the repository root. If your package.json is
+  # in the repository root (most common), keep this as "." or omit it.
+  base = "."
+  command = "npm run build"
+  publish = "dist/public"
+
+[context.production.environment]
+  # Example: if your frontend will call the API, set VITE_API_URL here
+  # VITE_API_URL = "https://api.example.com"
