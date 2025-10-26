@@ -49,24 +49,24 @@ export default function Contact() {
     {
       icon: MapPin,
       title: "Adresă",
-      content: "Str. Exemplu nr. 123, Chiajna, Ilfov"
+      content: "Strada Preot Sebe Costin 48, Chiajna, Romania"
     },
     {
       icon: Phone,
       title: "Telefon",
-      content: "+40 722 123 456",
-      link: "tel:+40722123456"
+      content: "+40 724 111 987",
+      link: "tel:+40724111987"
     },
     {
       icon: Mail,
       title: "Email",
-      content: "contact@x-drive.ro",
-      link: "mailto:contact@x-drive.ro"
+      content: "contact@scoaladesoferixdrive.ro",
+      link: "mailto:contact@scoaladesoferixdrive.ro"
     },
     {
       icon: Clock,
       title: "Program",
-      content: "Luni - Sâmbătă: 08:00 - 20:00"
+      content: "Luni-Vineri: 10:00-18:00 | Sâmbătă-Duminică: Închis"
     }
   ];
 
@@ -219,14 +219,14 @@ export default function Contact() {
 
         <Card className="overflow-hidden">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45661.77385934449!2d25.94863!3d44.47139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff3c17b84995%3A0x3005686ebe9db674!2sChiajna!5e0!3m2!1sen!2sro!4v1234567890"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2849.8!2d25.9886!3d44.4847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b201f0a7a0a0a0%3A0x0!2sStrada%20Preot%20Sebe%20Costin%2048%2C%20Chiajna!5e0!3m2!1sen!2sro!4v1234567890"
             width="100%"
             height="400"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Locația X-Drive în Chiajna"
+            title="Locația X-Drive - Strada Preot Sebe Costin 48, Chiajna"
           />
         </Card>
       </div>

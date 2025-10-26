@@ -19,11 +19,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-md flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">X</span>
-              </div>
-              <span className="font-bold text-xl text-foreground">X-Drive</span>
+            <div className="mb-4">
+              <img 
+                src="/attached_assets/image_1761483458665.png" 
+                alt="X-Drive Logo" 
+                className="h-16 w-auto"
+              />
             </div>
             <p className="text-muted-foreground mb-4">
               Școala ta de încredere pentru obținerea permisului de conducere în Chiajna, București.
@@ -52,18 +53,18 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-muted-foreground">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <span>Str. Exemplu nr. 123, Chiajna, Ilfov</span>
+                <span>Strada Preot Sebe Costin 48, Chiajna, Romania</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-5 h-5 flex-shrink-0" />
-                <a href="tel:+40722123456" className="text-muted-foreground hover:text-primary transition-colors">
-                  +40 722 123 456
+                <a href="tel:+40724111987" className="text-muted-foreground hover:text-primary transition-colors">
+                  +40 724 111 987
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-5 h-5 flex-shrink-0" />
-                <a href="mailto:contact@x-drive.ro" className="text-muted-foreground hover:text-primary transition-colors">
-                  contact@x-drive.ro
+                <a href="mailto:contact@scoaladesoferixdrive.ro" className="text-muted-foreground hover:text-primary transition-colors">
+                  contact@scoaladesoferixdrive.ro
                 </a>
               </li>
             </ul>

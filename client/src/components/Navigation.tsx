@@ -41,12 +41,11 @@ export default function Navigation() {
             className="flex items-center gap-2 hover-elevate active-elevate-2 rounded-md px-3 py-2 transition-all"
             data-testid="button-logo"
           >
-            <div className="w-10 h-10 bg-primary rounded-md flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">X</span>
-            </div>
-            <span className={`font-bold text-xl ${isScrolled ? "text-foreground" : "text-white"}`}>
-              X-Drive
-            </span>
+            <img 
+              src="/attached_assets/image_1761483458665.png" 
+              alt="X-Drive Logo" 
+              className="h-12 w-auto"
+            />
           </button>
 
           <div className="hidden md:flex items-center space-x-8">
