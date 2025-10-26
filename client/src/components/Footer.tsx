@@ -74,20 +74,28 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Urmărește-ne</h3>
             <div className="flex gap-3">
-              <button
-                onClick={() => console.log("Facebook clicked")}
+              <a
+                href="https://www.facebook.com/scoaladesoferixdrive"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X-Drive Facebook"
+                title="X-Drive Facebook"
                 className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover-elevate active-elevate-2 transition-all"
                 data-testid="footer-facebook"
               >
                 <Facebook className="w-5 h-5" />
-              </button>
-              <button
-                onClick={() => console.log("Instagram clicked")}
+              </a>
+              <a
+                href="https://www.instagram.com/scoala_de_soferi_x_drive"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X-Drive Instagram"
+                title="X-Drive Instagram"
                 className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover-elevate active-elevate-2 transition-all"
                 data-testid="footer-instagram"
               >
                 <Instagram className="w-5 h-5" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
