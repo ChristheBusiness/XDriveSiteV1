@@ -5,6 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import type { InsertContactMessage } from "@shared/schema";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from "lucide-react";
 
 export default function Contact() {
@@ -16,14 +19,30 @@ export default function Contact() {
     message: ""
   });
 
+  const submitContactMutation = useMutation({
+    mutationFn: async (data: InsertContactMessage) => {
+      const response = await apiRequest("POST", "/api/contact", data);
+      return await response.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "Mesaj trimis cu succes!",
+        description: "Vă vom contacta în cel mai scurt timp posibil.",
+      });
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    },
+    onError: () => {
+      toast({
+        title: "Eroare",
+        description: "A apărut o problemă. Vă rugăm încercați din nou.",
+        variant: "destructive",
+      });
+    },
+  });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    toast({
-      title: "Mesaj trimis!",
-      description: "Vă vom contacta în cel mai scurt timp posibil.",
-    });
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    submitContactMutation.mutate(formData);
   };
 
   const contactInfo = [
@@ -136,9 +155,10 @@ export default function Contact() {
                   type="submit" 
                   variant="default" 
                   className="w-full"
+                  disabled={submitContactMutation.isPending}
                   data-testid="button-submit-contact"
                 >
-                  Trimite Mesajul
+                  {submitContactMutation.isPending ? "Se trimite..." : "Trimite Mesajul"}
                 </Button>
               </form>
             </Card>
