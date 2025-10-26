@@ -207,22 +207,28 @@ export default function Contact() {
                 Urmărește-ne
               </h4>
               <div className="flex gap-3">
-                <Button 
-                  size="icon" 
-                  variant="outline"
-                  onClick={() => console.log("Facebook clicked")}
+                <a
+                  href="https://www.facebook.com/scoaladesoferixdrive"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X-Drive Facebook"
+                  title="X-Drive Facebook"
+                  className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover-elevate active-elevate-2 transition-all"
                   data-testid="button-facebook"
                 >
                   <Facebook className="w-5 h-5" />
-                </Button>
-                <Button 
-                  size="icon" 
-                  variant="outline"
-                  onClick={() => console.log("Instagram clicked")}
+                </a>
+                <a
+                  href="https://www.instagram.com/scoala_de_soferi_x_drive"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X-Drive Instagram"
+                  title="X-Drive Instagram"
+                  className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover-elevate active-elevate-2 transition-all"
                   data-testid="button-instagram"
                 >
                   <Instagram className="w-5 h-5" />
-                </Button>
+                </a>
               </div>
             </Card>
           </div>
