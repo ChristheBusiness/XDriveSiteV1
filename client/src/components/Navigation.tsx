@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logoUrl from "@assets/images/logox.png";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,9 +42,9 @@ export default function Navigation() {
             className="flex items-center gap-2 hover-elevate active-elevate-2 rounded-md px-3 py-2 transition-all"
             data-testid="button-logo"
           >
-            <img 
-              src="/attached_assets/image_1761483458665.png" 
-              alt="X-Drive Logo" 
+            <img
+              src={logoUrl}
+              alt="X-Drive Logo"
               className="h-12 w-auto"
             />
           </button>

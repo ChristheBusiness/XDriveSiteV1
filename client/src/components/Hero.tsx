@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Car, Award, Users } from "lucide-react";
-import heroImage from "@assets/generated_images/Driving_school_cars_training_lot_c88d6748.png";
+import heroImage from "@assets/generated_images/pozahero.png";
 
 export default function Hero() {
   const scrollToContact = () => {

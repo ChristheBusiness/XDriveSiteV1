@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import logoUrl from "@assets/images/logox.png";
 
 export default function Footer() {
   const scrollToSection = (id: string) => {
@@ -20,9 +21,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="mb-4">
-              <img 
-                src="/attached_assets/image_1761483458665.png" 
-                alt="X-Drive Logo" 
+              <img
+                src={logoUrl}
+                alt="X-Drive"
                 className="h-16 w-auto"
               />
             </div>
