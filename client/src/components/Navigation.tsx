@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon} from "lucide-react";
 import logoUrl from "@assets/images/logox.png";
+import { useTheme } from "@/hooks/use-theme";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,7 +66,15 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-4">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className={isScrolled ? "text-foreground" : "text-white"}
+            >
+              {theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+            </Button>
             <Button 
               variant="default"
               onClick={() => scrollToSection("contact")}
@@ -84,7 +94,7 @@ export default function Navigation() {
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
-      </div>
+      </div>     
 
       {isOpen && (
         <div className="md:hidden bg-background border-b border-border">
@@ -99,14 +109,24 @@ export default function Navigation() {
                 {item.label}
               </button>
             ))}
-            <Button 
-              variant="default"
-              className="w-full"
-              onClick={() => scrollToSection("contact")}
-              data-testid="button-enroll-mobile"
-            >
-              Înscrie-te Acum
-            </Button>
+            <div className="flex items-center gap-4 px-4">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleTheme}
+                className="text-foreground"
+              >
+                {theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+              </Button>
+              <Button 
+                variant="default"
+                className="w-full"
+                onClick={() => scrollToSection("contact")}
+                data-testid="button-enroll-mobile"
+              >
+                Înscrie-te Acum
+              </Button>
+            </div>
           </div>
         </div>
       )}

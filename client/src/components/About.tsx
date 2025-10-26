@@ -39,7 +39,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
           <div className="space-y-6">
             <p className="text-base md:text-lg text-foreground leading-relaxed">
-              Cu peste 15 ani de experiență în domeniul educației rutiere, <strong>X-Drive</strong> este alegerea perfectă pentru cei care doresc să învețe să conducă într-un mediu sigur și profesional.
+              Cu peste 5 ani de experiență în domeniul educației rutiere, <strong>X-Drive</strong> este alegerea perfectă pentru cei care doresc să învețe să conducă într-un mediu sigur și profesional.
             </p>
             
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">

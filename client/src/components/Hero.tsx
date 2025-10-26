@@ -54,7 +54,7 @@ export default function Hero() {
           <div className="flex flex-col items-center gap-3 p-6 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
             <Car className="w-8 h-8 text-primary" />
             <div className="text-white">
-              <div className="text-2xl font-bold">15+</div>
+              <div className="text-2xl font-bold">5+</div>
               <div className="text-sm text-white/80">Ani de Experiență</div>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function Hero() {
           <div className="flex flex-col items-center gap-3 p-6 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
             <Users className="w-8 h-8 text-primary" />
             <div className="text-white">
-              <div className="text-2xl font-bold">5000+</div>
+              <div className="text-2xl font-bold">1000+</div>
               <div className="text-sm text-white/80">Elevi Mulțumiți</div>
             </div>
           </div>

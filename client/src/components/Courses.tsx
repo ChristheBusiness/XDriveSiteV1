@@ -68,8 +68,8 @@ export default function Courses() {
                   {course.description}
                 </p>
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent rounded-full">
-                  <Clock className="w-4 h-4 text-accent-foreground" />
-                  <span className="text-sm font-medium text-accent-foreground">{course.duration}</span>
+                  <Clock className="w-4 h-4 text-foreground" />
+                  <span className="text-sm font-medium text-foreground">{course.duration}</span>
                 </div>
               </div>
 

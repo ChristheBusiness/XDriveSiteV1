@@ -48,7 +48,11 @@
 
   --popover-border: 0 0% 84%;
 
-  --primary: 60 100% 50%;
+ /* --primary: 60 100% 50%; */
+
+ /*--primary: 42 75% 50%;  cooler yellow(Like a honey yellow)*/
+
+  --primary: 60 75% 55%;
 
   --primary-foreground: 60 10% 10%;
 
@@ -62,11 +66,12 @@
 
   --accent: 60 12% 88%;
 
-  --accent-foreground: 60 12% 22%;
+  --accent-foreground: 60 12% 88%;
 
   --destructive: 0 84% 42%;
 
   --destructive-foreground: 0 10% 98%;
+
 
   --input: 0 0% 75%;
   --ring: 60 100% 50%;
