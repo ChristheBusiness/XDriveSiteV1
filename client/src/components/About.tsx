@@ -1,5 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, Shield, Car, Trophy } from "lucide-react";
+import img1 from "@assets/cursanti/n_1.jpg";
+import img2 from "@assets/cursanti/n_2.jpg";
+import img3 from "@assets/cursanti/n_3.jpg";
+import img4 from "@assets/cursanti/n_4.jpg";
 
 export default function About() {
   const features = [
@@ -57,14 +61,12 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-2 gap-6">
-            {[1, 2, 3, 4].map((item) => (
-              <div 
-                key={item}
+            {[img1, img2, img3, img4].map((src, idx) => (
+              <div
+                key={idx}
                 className="aspect-square rounded-xl bg-muted overflow-hidden"
               >
-                <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                  <Car className="w-12 h-12" />
-                </div>
+                <img src={src} alt={`Cursant ${idx + 1}`} className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
