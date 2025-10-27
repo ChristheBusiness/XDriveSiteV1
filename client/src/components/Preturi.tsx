@@ -2,11 +2,11 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Car, Gauge } from "lucide-react";
 
-import Car1 from "@/attached_assets/img_cars/DaciaLogan.jpg";
+import car1 from "@assets/img_cars/DaciaLogan.jpg";
 
 export default function Prices() {
   const manualCars = [
-    { name: "Dacia Logan", image: "/placeholder-car1.jpg" , price: "3200 RON" },
+    { name: "Dacia Logan", image: car1 , price: "3200 RON" },
     { name: "Volkswagen Golf", image: "/placeholder-car2.jpg", price: "3400 RON" },
     { name: "Ford Fiesta", image: "/placeholder-car3.jpg", price: "3300 RON" },
   ];
@@ -23,7 +23,7 @@ export default function Prices() {
         {/* Header */}
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Tarife și Mașini Disponibile
+            Preturi și Mașini Disponibile
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Alege tipul de cutie de viteze și descoperă prețurile disponibile pentru școala auto.
@@ -52,7 +52,14 @@ export default function Prices() {
                   <h4 className="text-lg font-semibold text-foreground mb-2">{car.name}</h4>
                   <p className="text-muted-foreground mb-4">Cutie Manuală</p>
                   <span className="text-xl font-bold text-primary mb-4">{car.price}</span>
-                  <Button variant="outline">Înscrie-te acum</Button>
+                  <Button
+                        onClick={() => {
+                        const formSection = document.getElementById("contact");
+                        formSection?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                    className="w-full">
+                    Înscrie-te acum
+                  </Button>
                 </Card>
               ))}
             </div>
@@ -79,7 +86,14 @@ export default function Prices() {
                   <h4 className="text-lg font-semibold text-foreground mb-2">{car.name}</h4>
                   <p className="text-muted-foreground mb-4">Cutie Automată</p>
                   <span className="text-xl font-bold text-primary mb-4">{car.price}</span>
-                  <Button variant="outline">Înscrie-te acum</Button>
+                                    <Button
+                        onClick={() => {
+                        const formSection = document.getElementById("contact");
+                        formSection?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                    className="w-full">
+                    Înscrie-te acum
+                  </Button>
                 </Card>
               ))}
             </div>

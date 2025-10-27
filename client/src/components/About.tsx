@@ -42,7 +42,7 @@ export default function About() {
               Cu peste 5 ani de experiență în domeniul educației rutiere, <strong>X-Drive</strong> este alegerea perfectă pentru cei care doresc să învețe să conducă într-un mediu sigur și profesional.
             </p>
             
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base md:text-lg text-foreground leading-relaxed">
               Ne mândrim cu o echipă de instructori dedicați, pacienți și profesionisti care își doresc să transmită elevilor cunoștințele necesare pentru a deveni șoferi responsabili și încrezători.
             </p>
 
