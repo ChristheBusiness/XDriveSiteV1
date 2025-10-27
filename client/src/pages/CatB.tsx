@@ -1,24 +1,15 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Courses from "@/components/Courses";
-import Testimonials from "@/components/Testimonials";
-
-import CTA from "@/components/CTA";
+import InfoB from "@/components/InfoB";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function CatB() {
   return (
     <div className="min-h-screen">
       <Navigation />
       <main id="acasa">
-        <Hero />
-        <About />
-        <Courses />
-        <Testimonials />
-        
-        <CTA />
+        <InfoB />
         <Contact />
       </main>
       <Footer />

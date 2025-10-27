@@ -1,8 +1,12 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Car, Clock, BookOpen } from "lucide-react";
+import { useLocation } from "wouter";
 
 export default function Courses() {
+
+  const [location, setLocation] = useLocation();
+
   const courses = [
     {
       icon: Car,
@@ -86,8 +90,12 @@ export default function Courses() {
                 variant="outline" 
                 className="w-full"
                 onClick={() => {
-                  const contactSection = document.getElementById("contact");
-                  contactSection?.scrollIntoView({ behavior: "smooth" });
+                  if (course.title === "Categoria B") {
+                    setLocation("/CategoriaB"); // navigate to CatB page
+                  } else {
+                    const contactSection = document.getElementById("contact");
+                    contactSection?.scrollIntoView({ behavior: "smooth" });
+                  }
                 }}
                 data-testid={`button-course-${index}`}
               >
