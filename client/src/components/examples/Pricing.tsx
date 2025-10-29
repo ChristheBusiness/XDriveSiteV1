@@ -1,4 +1,4 @@
-import Pricing from '../Pricing'
+import Pricing from '../NotUsedPricing'
 
 export default function PricingExample() {
   return <Pricing />
