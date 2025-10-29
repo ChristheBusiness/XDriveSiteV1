@@ -1,9 +1,14 @@
 import { useEffect, useState } from 'react';
 
 export function useTheme() {
-  const [theme, setTheme] = useState<'light' | 'dark'>(
-    () => (localStorage.getItem('theme') as 'light' | 'dark') || 'light'
-  );
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    // Check if a theme is stored in localStorage
+    const storedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    if (storedTheme) return storedTheme;
+
+    // If nothing is stored, default to dark mode
+    return 'dark';
+  });
 
   useEffect(() => {
     const root = window.document.documentElement;
